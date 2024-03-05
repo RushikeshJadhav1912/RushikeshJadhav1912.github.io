@@ -132,35 +132,125 @@
 .ftco-footer-social li {
     margin-right: 10px; /* Adjust the spacing between icons */
 }
+body {
+            background-color: black;
+            color: white;
+        }
+
+        /* Dark mode styles */
+        body.dark-mode {
+            background-color: dimgrey;
+            color: black;
+        }
+
+        /* Add styles for the button */
+        .color-toggle {
+            border: none;
+            background: none;
+            cursor: pointer;
+            color: white; /* Button color */
+            padding-right: 20px; /* Remove padding */
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .color-toggle:focus {
+            outline: none; /* Remove focus outline */
+        }
+
+        .color-toggle .oi {
+            font-size: 1.5em; /* Adjust icon size */
+        }
+		body.dark-mode {
+    background-color: dimgrey;
+    color: black;
+}
+
+/* Add styles for the button */
+.color-toggle {
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: white; /* Button color */
+    padding-right: 1460px; /* Remove padding */
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+}
+
+.color-toggle:focus {
+    outline: none; /* Remove focus outline */
+}
+
+.color-toggle .oi {
+    font-size: 1.5em; /* Adjust icon size */
+}
+
+/* Hide the image in dark mode */
+.dark-mode .slider-item .img {
+    display: none;
+}
+/* Hide the image in dark mode */
+.dark-mode .img-about .about-img img {
+    display: none;
+}
 
 
-</style>
+    </style>
+</head>
+<body>
 
+<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
+    <div class="container">
+        <a class="navbar-brand" href="index.html"></a>
 
-  </head>
-  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
-	  
-	  
-    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
-	    <div class="container">
-	      <a class="navbar-brand" href="index.html"></a>
-	      <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-	        <span class="oi oi-menu"></span> Menu
-	      </button>
+        <!-- Toggle menu button -->
+        <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="oi oi-menu"></span> Menu
+        </button>
 
-	      <div class="collapse navbar-collapse" id="ftco-nav">
-	        <ul class="navbar-nav nav ml-auto">
-	          <li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
-	          <li class="nav-item"><a href="#about-section" class="nav-link"><span>About</span></a></li>
-	          <li class="nav-item"><a href="#resume-section" class="nav-link"><span>Resume</span></a></li>
-			  <li class="nav-item"><a href="#course-section" class="nav-link"><span>Courses</span></a></li>
-	          <li class="nav-item"><a href="#project-section" class="nav-link"><span>Projects</span></a></li>
-	          <li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
-			  
-	        </ul>
-	      </div>
-	    </div>
-	  </nav>
+        <div class="collapse navbar-collapse" id="ftco-nav">
+            <ul class="navbar-nav nav ml-auto">
+                <li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
+                <li class="nav-item"><a href="#about-section" class="nav-link"><span>About</span></a></li>
+                <li class="nav-item"><a href="#resume-section" class="nav-link"><span>Resume</span></a></li>
+                <li class="nav-item"><a href="#course-section" class="nav-link"><span>Courses</span></a></li>
+                <li class="nav-item"><a href="#project-section" class="nav-link"><span>Projects</span></a></li>
+                <li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
+				
+            </ul>
+        </div>
+
+        <!-- Icon button to toggle color -->
+        <button class="color-toggle" type="button" onclick="toggleMode()">
+			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-toggle2-off" viewBox="0 0 16 16">
+				<path d="M9 11c.628-.836 1-1.874 1-3a4.98 4.98 0 0 0-1-3h4a3 3 0 1 1 0 6z"/>
+				<path d="M5 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8m0 1A5 5 0 1 0 5 3a5 5 0 0 0 0 10"/>
+			</svg>
+			<span class="oi oi-invert-colors"></span> <!-- Icon for dark mode/light mode -->
+		</button>
+    </div>
+</nav>
+
+<!-- Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+    // Function to toggle between dark and light mode
+    function toggleMode() {
+        const body = document.body;
+        body.classList.toggle('dark-mode');
+    }
+</script>
 	  <section id="home-section" class="hero">
 		  <div class="home-slider  owl-carousel">
 	       <div class="slider-item ">
@@ -249,23 +339,22 @@
 								<div class="row">
 									<div class="col-sm-6 col-md-5">
 									  <div class="about-img">
-<!-- 										<img src="images/new-Photoroom.png-Photoroom.png" class="img-fluid rounded b-shadow-a" alt=""> -->
-										
+										<img src="" class="img-fluid rounded b-shadow-a" alt="">
 									  </div>
 									</div>
 									<!-- Details next to profile image -->
-									<div class="col-sm-6 col-md-12">
-									  <div class="about-info">
-										<p><span class="title-s">Name : </span> <span>Rushikesh Jadhav</span></p>
+									<div class="col-sm-7  col-md-12">
+										<div class="about-info">
+											<p><span class="title-s">Name:</span> <span>Rushikesh Jadhav</span></p>
+					
+											<p><span class="title-s">Address:</span> <span>Mumbai, India</span></p
 											
-										<p><span class="title-s">Address : </span> <span>Mumbai, India</span></p
-											
-										<p><span class="title-s">Birth Date : </span> <span>December 19th, 2000</span></p>
+											<p><span class="title-s">Birth Date:</span> <span>December 19th, 2000</span></p>
 
-										<p><span class="title-s">Website : </span> <span><a href="#">https://rushikeshjadhav1912.github.io/</a></span></p>
-									  </div>
+											<p><span class="title-s">Website:</span> <span><a href="#">https://rushikeshjadhav1912.github.io/</a></span></p>
+										</div>
 									</div>
-								  </div>
+								</div>
 
 								<div class="skill-mf">
 									<p class="about-info mt-4 px-md-0 px-2" style="color: white; font-weight: bold;">Skills</p>
@@ -381,7 +470,7 @@
             <p>Specializing in Software Development | Passionate about technology | Eager to contribute and grow | Java | Spring Boot | HTML | CSS | Angular | .NET | Angular js | React js | Node js</p>
 			<div class="row justify-content-center mt-5">
 				<div class="col-md-6 text-center ftco-animate">
-					<p><a href="https://drive.google.com/file/d/1UIrW4QeYH6bdhawnpzv37UbrT1-nzWK_/view?usp=sharing" class="btn btn-primary py-4 px-5">Download CV</a></p>
+					<p><a href="https://drive.google.com/file/d/1Uiy0nzKTlEtT0mOMIlW6-2ZdL1tVKQDr/view?usp=drive_link" class="btn btn-primary py-4 px-5">Download CV</a></p>
 				</div>
 			</div>
           </div>
@@ -767,7 +856,7 @@
           			<span class="icon-globe"></span>
           		</div>
           		<h3 class="mb-4">Download Resume</h3>
-	            <p><a href="https://drive.google.com/file/d/1UIrW4QeYH6bdhawnpzv37UbrT1-nzWK_/view?usp=sharing">resumelink</a></p>
+	            <p><a href="https://drive.google.com/file/d/1Uiy0nzKTlEtT0mOMIlW6-2ZdL1tVKQDr/view?usp=drive_link">resumelink</a></p>
 	          </div>
           </div>
 
