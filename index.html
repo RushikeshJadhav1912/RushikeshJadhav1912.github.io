@@ -132,62 +132,7 @@
 .ftco-footer-social li {
     margin-right: 10px; /* Adjust the spacing between icons */
 }
-	body {
-            background-color: black;
-            color: white;
-        }
-
-        /* Dark mode styles */
-        body.dark-mode {
-            background-color: dimgrey;
-            color: black;
-        }
-
-        
-		
-
-
-/* Add styles for the button */
-.color-toggle {
-    border: none;
-    background: none;
-    cursor: pointer;
-    color: white; /* Button color */
-    padding-right: 20px; /* Remove padding */
-    position: absolute;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    display: flex;
-    align-items: center;
-}
-
-.color-toggle:focus {
-    outline: none; /* Remove focus outline */
-}
-
-.color-toggle .oi {
-    font-size: 1.5em; /* Adjust icon size */
-}
-
-
-.dark-mode .slider-item .img {
-    display: none;
-}
-/* Hide the image in dark mode */
-/* .dark-mode .img-about .about-img img {
-    display: none;
-}  */
-@media (max-width: 767px) {
-    .navbar-toggler {
-        margin-right: 60px; /* Add margin to the right of the menu button */
-        margin-left: -60px; /* Move the menu button slightly to the left */
-    }
-}
-
-
-
-
+	
 </style>
 
 
@@ -215,32 +160,8 @@
 				
             </ul>
         </div>
-
-        <!-- Icon button to toggle color -->
-        <button class="color-toggle" type="button" onclick="toggleMode()">
-			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-toggle2-off" viewBox="0 0 16 16">
-				<path d="M9 11c.628-.836 1-1.874 1-3a4.98 4.98 0 0 0-1-3h4a3 3 0 1 1 0 6z"/>
-				<path d="M5 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8m0 1A5 5 0 1 0 5 3a5 5 0 0 0 0 10"/>
-			</svg>
-			<span class="oi oi-invert-colors"></span> <!-- Icon for dark mode/light mode -->
-		</button>
     </div>
-</nav>
-
-<!-- Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-<script>
-    // Function to toggle between dark and light mode
-    function toggleMode() {
-        const body = document.body;
-        body.classList.toggle('dark-mode');
-    }
-</script>
-	    
-	  
+</nav> 
 	  <section id="home-section" class="hero">
 		  <div class="home-slider  owl-carousel">
 	       <div class="slider-item ">
